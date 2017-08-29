@@ -12,7 +12,12 @@ After doing this, go ahead and skip to running the Docker container.
 Go to your two 3D models folder, let's say it's defined as $MODEL_DIR
 Run the following on the command line:
 ```
-docker run -it --rm -v $MODEL_DIR:/models/ -w=/root/maya-archaeology/go-icp-script/scripts wasd/go-icp-docker 
+docker run -it --rm \
+  -v $MODEL_DIR:/models/ \
+  -w=/root/maya-archaeology/go-icp-script/scripts \
+  -e DISPLAY=$DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  wasd/go-icp-docker
 ```
 
 ## To use

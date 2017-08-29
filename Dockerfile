@@ -20,9 +20,10 @@ RUN cd /opt \
   && cd pcl-trunk && mkdir build && cd build \
   && cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .. \ 
   && make -j2
-RUN make install -j2
+# RUN make install -j2
 RUN cd /usr/local/bin \
-  && ln -sf /opt/pcl-trunk/build/bin/pcl_ply2pcd pcl1.8_ply2pcd
+  && ln -sf /opt/pcl-trunk/build/bin/pcl_ply2pcd pcl1.8_ply2pcd \ 
+  && ln -sf /opt/pcl-trunk/build/bin/pcl_pcd2ply pcl1.8_pcd2ply
 
 # Setup GoICP
 RUN cd /opt \
