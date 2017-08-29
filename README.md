@@ -1,19 +1,22 @@
 # go-icp-docker
 [Go-ICP](http://jlyang.org/go-icp/) is a registration algorithm for 3d point clouds with global optimization. However, it needs nornalized models in txt file format as input. This container with script does pre-processing to normalize (values in \[-1,1\]) any ply files passed as input, generate the registration matrix (GoICP), register the reading model to the reference model, and calculate the error between the two models using [PCL](http://pointclouds.org/).
 
-## To build from Docker Hub
+## To Build from Docker Hub
 Pull the [image](https://hub.docker.com/r/wasd/go-icp-docker/) from Docker Hub like so:
 ```
 docker pull wasd/go-icp-docker
 ```
+Skip to running the container after this step
 
-## To build from Dockerfile
+## To Build from Dockerfile
 Clone this repository and edit the Dockerfile, if you wish, and then run in the same directory as the Dockerfile:
 ```
+git clone https://github.com/waseemkhan96/go-icp-docker
+cd go-icp-docker
 docker build -t wasd/go-icp-docker .
 ```
 
-## To run
+## To Run
 Go to your two 3D models folder, let's say it's defined as $MODEL_DIR  
 Run either one of the following on the command line  
 Without X-forwarding:
@@ -28,7 +31,7 @@ First, Enable non-network local connections to access control list
 ```
 xhost +local:
 ```
-Run Docker container
+Next, Run the container
 ```
 docker run -it --rm \
   -v $MODEL_DIR:/models/ \
@@ -37,14 +40,15 @@ docker run -it --rm \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   wasd/go-icp-docker
 ```
-After exiting docker container, to bring back to normal:
+Optionally, after exiting docker container, to bring back to normal:
 ```
 xhost -
 ```
 
-## To use
+## To Use
 Simply run:
 ```
 python go-icp.py /models/reference.ply /models/reading.ply
 ```
-Refer to [Documentation](https://github.com/UCSD-E4E/maya-archaeology#go-icp-script)
+Results should be printed in console and files will be located in /root/maya-archaeology/go-icp-script/models/reading folder
+Refer to [Documentation](https://github.com/UCSD-E4E/maya-archaeology#go-icp-script) for specifics
