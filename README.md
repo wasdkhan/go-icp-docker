@@ -10,7 +10,7 @@ After doing this, go ahead and skip to running the Docker container.
 
 ## To run
 Go to your two 3D models folder, let's say it's defined as $MODEL_DIR
-Run the following on the command line
+Run the following on the command line  
 Without X-forwarding:
 ```
 docker run -it --rm \
