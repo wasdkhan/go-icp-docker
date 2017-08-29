@@ -42,3 +42,5 @@ RUN cd /root \
   && mkdir build && cd build \
   && cmake .. \
   && make -j2
+
+RUN mkdir /models
