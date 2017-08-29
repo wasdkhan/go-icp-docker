@@ -6,7 +6,12 @@ Pull the [image](https://hub.docker.com/r/wasd/go-icp-docker/) from Docker Hub l
 ```
 docker pull wasd/go-icp-docker
 ```
-After doing this, go ahead and skip to running the Docker container.
+
+## To build from Dockerfile
+Clone this repository and edit the Dockerfile, if you wish, and then run in the same directory as the Dockerfile:
+```
+docker build -t wasd/go-icp-docker .
+```
 
 ## To run
 Go to your two 3D models folder, let's say it's defined as $MODEL_DIR  
