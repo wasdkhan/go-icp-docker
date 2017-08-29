@@ -9,8 +9,8 @@ docker pull wasd/go-icp-docker
 After doing this, go ahead and skip to running the Docker container.
 
 ## To run
-Go to your two 3D models folder, let's say it's defined as $MODEL_DIR
-Run the following on the command line  
+Go to your two 3D models folder, let's say it's defined as $MODEL_DIR  
+Run either one of the following on the command line  
 Without X-forwarding:
 ```
 docker run -it --rm \
@@ -18,7 +18,7 @@ docker run -it --rm \
   -w=/root/maya-archaeology/go-icp-script/scripts \
   wasd/go-icp-docker
 ```
-With X-forwarding:
+With X-forwarding (to view error models):
 ```
 docker run -it --rm \
   -v $MODEL_DIR:/models/ \
