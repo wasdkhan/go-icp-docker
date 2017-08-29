@@ -19,10 +19,11 @@ docker run -it --rm \
   wasd/go-icp-docker
 ```
 With X-forwarding (to view error models):  
-first enable non-network local connections to access control list
+First, Enable non-network local connections to access control list
 ```
 xhost +local:
 ```
+Run Docker container
 ```
 docker run -it --rm \
   -v $MODEL_DIR:/models/ \
@@ -31,7 +32,7 @@ docker run -it --rm \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   wasd/go-icp-docker
 ```
-To bring back to normal
+After exiting docker container, to bring back to normal:
 ```
 xhost -
 ```
