@@ -46,9 +46,14 @@ xhost -
 ```
 
 ## To Use
-Simply run:
+To register two ply files and calculate the error afterwards:
 ```
 python go-icp.py /models/reference.ply /models/reading.ply
 ```
-Results should be printed in console and files will be located in /root/maya-archaeology/go-icp-script/models/reading folder
+Results should be printed in console and files will be located in /root/maya-archaeology/go-icp-script/models/reading folder  
 Refer to [Documentation](https://github.com/UCSD-E4E/maya-archaeology#go-icp-script) for specifics
+```
+python error.py /models/reference.(vtk, ply, pcd) /models/reading.(vtk, ply, pcd)
+```
+Results are stored in /models/e-reading/ folder and has the input files as pcd, the input files with norms as pcd, and the error models in pcd and ply formats.  
+Refer to [Errors](https://github.com/UCSD-E4E/maya-archaeology/wiki/4.-Calculating-Error#computing-cloud-errors)

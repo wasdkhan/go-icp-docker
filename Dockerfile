@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y software-properties-common \
   python \
   unzip \
   vim \
+  vim-gnome \
   wget
 
 # Setup PCL 1.8
@@ -25,7 +26,7 @@ RUN cd /usr/local/bin \
   && ln -sf /opt/pcl-trunk/build/bin/pcl_ply2pcd pcl1.8_ply2pcd \ 
   && ln -sf /opt/pcl-trunk/build/bin/pcl_pcd2ply pcl1.8_pcd2ply \
   && ln -sf /opt/pcl-trunk/build/bin/pcl_vtk2pcd pcl1.8_vtk2pcd \
-  && ln -sf /opt/pcl-trunk/build/bin/pcl_pcd2vtk pcl1.8_vtk2pcd \
+  && ln -sf /opt/pcl-trunk/build/bin/pcl_pcd2vtk pcl1.8_pcd2vtk \
 
 # Setup GoICP
 RUN cd /opt \
