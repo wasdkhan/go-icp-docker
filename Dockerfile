@@ -23,7 +23,9 @@ RUN cd /opt \
 # RUN make install -j2
 RUN cd /usr/local/bin \
   && ln -sf /opt/pcl-trunk/build/bin/pcl_ply2pcd pcl1.8_ply2pcd \ 
-  && ln -sf /opt/pcl-trunk/build/bin/pcl_pcd2ply pcl1.8_pcd2ply
+  && ln -sf /opt/pcl-trunk/build/bin/pcl_pcd2ply pcl1.8_pcd2ply \
+  && ln -sf /opt/pcl-trunk/build/bin/pcl_vtk2pcd pcl1.8_vtk2pcd \
+  && ln -sf /opt/pcl-trunk/build/bin/pcl_pcd2vtk pcl1.8_vtk2pcd \
 
 # Setup GoICP
 RUN cd /opt \
