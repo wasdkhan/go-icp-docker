@@ -11,7 +11,7 @@ Skip to running the container after this step
 ## To Build from Dockerfile
 Clone this repository and edit the Dockerfile, if you wish, and then run in the same directory as the Dockerfile:
 ```
-git clone https://github.com/waseemkhan96/go-icp-docker
+git clone https://github.com/wasdkhan/go-icp-docker
 cd go-icp-docker
 docker build -t wasd/go-icp-docker .
 ```
